@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/styling.css') }}">
+    <script  defer src="{{ url_for('static', filename = 'js/contact_js.js') }}"></script>
+    <title>Bloom- Contact us</title>
+</head>
+
+<body>
+{% include('nav.html') %}
+
+    <div id="contactPage">
+    <div id="Header_contactPage">
+    {% include('header.html') %}
+
+        <footer>
+        Your opinion is important to us, we will be happy to receive any response, <br>
+        question or request from you and we will get back to you ASAP
+    </footer>
+    </div>
+ 
+    <form action="URL" method="post" id="main_contact" class="container">
+        <div id="contact_info">
+        <label for="FirstName" id="FirstName">
+            First Name</label>
+        <input type="text" id="FirstName" name="FirstName" autocomplete="on" pattern="[A-Za-z]{1,32}" required><br>
+
+
+        <label for="LastName" id="LastName" style="margin-right: 1%">
+            Last Name</label>
+        <input type="text" id="LastName" name="LastName" autocomplete="on" pattern="[A-Za-z]{1,32}" required><br>
+
+
+        <label for="email" id="email" style="margin-right: 12%">
+            E-mail </label>
+        <input type="email" id="email" name="email" autocomplete="on" pattern="[^ @]*@[^ @]*.com" required><br><br>
+
+    
+        <u><label class="info_padding" for="reason" id="reason">
+        Reason for contact:</label><br></u>
+        <label class="info_padding" for="reason" id="reason1" name="reason1">
+            Not satisfied from my last order</label>
+        <input class="info_padding" type="checkbox" id="checking1"><br>
+        <label class="info_padding" for="reason" id="reason2" name="reason2" >
+            Having trouble to choose a Bouquet</label>
+        <input class="info_padding" type="checkbox" id="checking2"><br>
+        <label class="info_padding" for="reason" id="reason3" name="reason3"> 
+            The flower I want is not in stock</label>
+        <input class="info_padding" type="checkbox" id="checking3"><br>
+        <label class="info_padding" for="reason" id="reason4" name="reason4">
+            Other</label>
+        <input type="checkbox" id="checking4"><br><br>
+    </div>
+
+    <div id="addings_div">
+        <label for="addings" >
+            Anything else you'd like to add?</label><br>
+        <textarea name="addings" id="addings"></textarea> <br>
+
+        <label for="file" id="file">
+            Add a picture or a file</label>
+        <input type="file" id="file" name="file"><br><br>
+        <div id="submit_div">
+            <input type="Submit" class="submit">
+        </div>
+    </div>
+
+    <div id="inst_fb">
+        <p>You can also visit us on instagram and facebook </p>
+        <nav>
+            <a href="https://he-il.facebook.com/"><img src="../static/img/facebook_icon.jpg" alt="f_icon" class="animation_icon"></a>
+            <a href="https://www.instagram.com/accounts/login/"><img src="../static/img/instagram_icon.jpg" alt="insta_icon" class="animation_icon"></a>
+        </nav>
+    </div>
+    </form>
+</div>
+
+</body>
+</html>

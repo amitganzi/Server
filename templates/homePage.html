@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={{url_for('static', filename = 'css/styling.css') }}>
+    <script defer src={{ url_for('static', filename = 'js/styling.js') }}></script>
+    <title>Bloom- Home Page</title>
+</head>
+
+
+<body>
+{% include('nav.html') %}
+
+    <div id="homePage">
+        <div id="Header_HomePage">
+    {% include('header.html') %}
+
+        <footer>
+            This is an online flower shop, you can make your own bouquets or <br>
+            you can choose a bouquet that we design. <br>
+            We make deliveries all over the country, just choose a bouque and we'll be there! <br><br>
+            <b>Check out our store in Beer Sheva: </b></Check><br><img src="../static/img/flowerShop.jpg" alt="FlowerShop" id="flowerShop">
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img01">
+                <div id="caption"></div>
+              </div>
+        </footer>
+        </div>
+
+
+        <div id="main_HomePage" class="container">
+    <b><div class="menu">
+       <p class="ourBouquets">Our Bouquets:</p><br><br> 
+       <ul>
+            <li>White Bloom <br>
+                <img src="../static/img/whiteBloom.jpg" alt="whiteBloom" class="flower_img">
+            </li>
+            <li>Red Roses <br>
+                <img src="../static/img/redRoses.jpg" alt="redRoses" class="flower_img">
+            </li>
+            <li>Camilla's Bouquet <br>
+                <img src="../static/img/camillaBouque.jpg" alt="camillaBouque" class="flower_img">
+            </li>
+            <li>Andy's Bouquet <br>
+                <img src="../static/img/andyBouque.jpg" alt="andyBouque" class="flower_img">
+            </li>
+
+       </ul>
+    </div>
+
+
+    <div class="menu">
+        <p class="ourFlowers">Our Flowers:</p><br><br>
+        <ul>
+             <li>Red Rose <br>
+                 <img src="../static/img/rose.jpg" alt="rose" class="flower_img">
+             </li>
+             <li>Sun Flower <br>
+                 <img src="../static/img/sunFlower.jpg" alt="sunFlower" class="flower_img">
+             </li>
+             <li>Tulip <br>
+                 <img src="../static/img/tulip.jpg" alt="tulip" class="flower_img">
+             </li>
+             <li>Gypsophila <br>
+                 <img src="../static/img/Gypsophila.jpg" alt="Gypsophila" class="flower_img">
+             </li>
+        </ul>
+     </div></b>
+
+     </div>
+    </div>
+</body>
+</html>

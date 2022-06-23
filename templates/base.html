@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>{% block title %}{% endblock %}</title>
+    {% include('style.html') %}
+    {% include('js.html') %}
+</head>
+<body>
+    {% include('nav.html') %}
+    {% include('header.html')%}
+
+    {% block content %}
+        {% block footer %}
+        <footer> Welcome to Bloom Flower Shop! </footer>
+    {% endblock %}
+     <h1>Choose content</h1>
+    {% endblock %}
+</body>
+</html>

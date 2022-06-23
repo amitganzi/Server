@@ -1,0 +1,14 @@
+<div>
+    <nav id="nav_to_contact" class="navbar">
+        <a href="/home" class="nav_a">Home</a>
+        <a href="/contact" class="nav_a">Contact Us</a>
+        <a href="/assignment3_1" class="nav_a"> Assignment3_1</a>
+        <a href="/assignment3_2" class="nav_a"> Assignment3_2</a>
+          {% if session['logedin'] %}
+        <p id="user_login">Hello, {{ session['name'] }}</p>
+    {% endif %}
+
+    </nav>
+
+
+</div>

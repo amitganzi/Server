@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}About Page{% endblock %}
+
+{% block content %}
+    <div id="ass3_1">
+            {% block footer %}
+                {{ super() }}
+    <footer id="footer_ass3_1"> Hello, {{ session['name'] | default('Stranger', True) | upper }}! here you can find a very
+    big various of flowers. With the flowers you pick you can make your own bouquet or use the bouquets
+    that are already exists in the store. </footer>
+            {% endblock %}
+
+    <div class="container" id="container_ass3_1">
+    <h3>Here are the {{ bouquets | length }} that are already exist in our store:</h3>
+
+        <ol id="ass3_1_bouquets">
+        {% for bouquet in bouquets %}
+            <li>
+                {{ bouquet }} <br>
+                {% if bouquet == 'Andy Bouquet' %}
+                    <img src="../static/img/andyBouque.jpg" alt="andyBouque" class="flower_img">
+                {% elif  bouquet == 'Camilla Bouquet'%}
+                     <img src="../static/img/camillaBouque.jpg" alt="camillaBouque" class="flower_img">
+                {% elif bouquet == 'White Bloom Bouquet' %}
+                     <img src="../static/img/whiteBloom.jpg" alt="whiteBloom" class="flower_img">
+                {% else %}
+                     <img src="../static/img/redRoses.jpg" alt="redRoses" class="flower_img">
+                {% endif %}
+            </li>
+        {% endfor %}
+     </ol>
+    <p> If you want to search the types of flowers we have in our store <br>
+        <a href="{{url_for('assignment3_2')}}">CLICK HERE!</a></p>
+    </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}Bloom - Forms{% endblock %}
+
+{% block content %}
+    {% block footer %}
+        {{ super() }}
+    {% endblock %}
+
+    <div id="ass3_2">
+    <div id="searchForm" class="container">
+    <h1>Search flowers in our shop:</h1>
+        <form action="/assignment3_2" method="get">
+            <input type="text" name="flower_type" placeholder="Product Name" class="ass3_inputs">
+            <input type="submit" value="Find" class="submit">
+        </form>
+
+        {% if flower_type %}
+            <h2><u>{{ flower_type }}</u></h2>
+            <div class="details">
+                <p><u>Colors:</u> {{ flower_color }}</p>
+                <p><u>Amount in stock:</u> {{ flower_amount }}</p>
+            </div>
+        {% endif %}
+
+        {% if message %}
+            <h3>{{ message }}</h3>
+        {% endif %}
+
+        {% if flowers_dict %}
+            <ol>
+                {% for type in flowers_dict %}
+                    <li><p>Type: {{ type }}, Colors: {{ flowers_dict[type][0] }}, Amount in stock: {{ flowers_dict[type][1] }}</p></li>
+                {% endfor %}
+            </ol>
+        {% endif %}
+    </div>
+
+
+    <div id = "registrationForm" class="container">
+    {% if session['logedin'] %}
+            <h1>{{ message }}, {{ session['name'] | upper() }} !</h1>
+        <a href="/endSession"><button class="submit">Log Out</button></a>
+
+    {% else %}
+            <h1>New here? Sign up!</h1>
+            {% if message %}
+                <h2>{{ message }}</h2>
+            {% endif %}
+
+            <form action="/assignment3_2" method="post">
+                <input type="email" name="username" placeholder="abc@def.com"  pattern="[^ @]*@[^ @]*.com" class="ass3_inputs" required><br>
+                <input type="text" name="name" placeholder="Name" class="ass3_inputs" required><br>
+                <input type="text" name="password" placeholder="password" pattern="[0-9]{4}" class="ass3_inputs" required> <br>
+                <p>*password must contain 4 numbers</p> <br>
+                <input type="submit" class="submit">
+            </form>
+    {% endif %}
+    </div>
+</div>
+
+{% endblock %}

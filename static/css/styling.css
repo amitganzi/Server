@@ -1,0 +1,360 @@
+body {
+    background: url(../img/background.jpg) no-repeat;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    backdrop-filter: blur(10px);
+    background-size: 100% 100%;
+}
+
+#homePage {
+    display: grid;
+    grid-template-areas:'Nav Nav Nav'
+                        'Header Header Header' 
+                        'Main Main Main';
+
+    margin: 20px;
+    padding: 10px;
+}
+
+#Header_HomePage{
+    grid-area: Header;
+    text-align: center; 
+}
+
+.container{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgba(232, 217, 237, 0.3);
+}
+
+#main_HomePage {
+    grid-area: Main;
+    text-align: center;
+}
+
+#nav_to_contact{
+    grid-area: Nav;
+}
+
+@media only screen and (max-width: 1000px) {
+    #HomePage {
+        display: grid;
+        grid-template-areas: 'Nav' 'Header' 'Main';
+    }
+
+    #contactPage {
+        display: grid;
+        grid-template-areas:'Nav' 'Header' 'Main';
+    }
+
+    #contact_info{
+        float: left;
+        margin-left: 20%;
+    }
+
+    #addings_div{
+        margin-left: 20%;
+        margin-top: 7%;
+        padding-right: 20%;
+        justify-content: left;
+    }
+
+
+    #adding{
+        width: fit-content;
+        height: fit-content;
+    }
+
+    #inst_fb{
+        margin-left: 30%;
+
+    }
+
+    .modal-content {
+        width: 100%;
+      }
+} 
+
+@media only screen and (max-width: 750px) {
+    #addings_div{
+        margin-left: 20%;
+        margin-top: 7%;
+        padding-right: 0%;
+        justify-content: left;
+    }
+
+}
+
+#contactPage {
+    display: grid;
+    grid-template-areas:'Nav Nav Nav'
+                        'Header Header Header' 
+                        'Main Main Main';
+    margin: 20px;
+    padding: 10px;
+}
+
+#Header_contactPage{
+    grid-area: Header;
+    text-align: center; 
+}
+
+#nav_to_home{
+    grid-area: Nav;
+} 
+
+#main_contact{
+    grid-area: Main;
+    padding: 5%;
+    margin: 5%;
+    margin-top: 0%;
+} 
+
+#contact_info{
+    float: left; 
+    font-size: larger; 
+    color: rgb(117, 19, 35);
+    font-weight: bold;
+    margin-left: 7%;
+}
+
+#addings_div{
+    float: right; 
+    font-size: larger; 
+    color: rgb(117, 19, 35);
+    font-weight: bold;
+    margin-right: 7%;
+}
+
+#addings{
+    width: 400px;
+    height: 100px;
+}
+#reason1 {margin-right: 10.6%;}
+#reason3 {margin-right: 10.2%;}
+#reason4 {margin-right: 77%;}
+
+
+
+header {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(146, 23, 148); 
+    font-size: xxx-large; 
+    padding-bottom: 2%;
+    font-weight: bold;
+    text-align: center;
+}
+
+footer{
+    grid-area: Header;
+    color: rgb(128, 8, 124); 
+    font-size: larger; 
+    padding-bottom: 2%;
+    text-align: center;
+}
+
+#nav_to_home, #nav_to_contact{
+    text-align: left; 
+    color: rgb(216, 12, 209); 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    padding: 1%; 
+    background-color: rgb(205, 174, 232); 
+    border: 2px solid white;
+    margin-bottom: 5%;
+}
+
+a {
+    padding: 14px;
+    text-decoration: none;
+}
+
+a:hover { 
+    color: white;
+}
+
+.active{
+    background-color: white;
+    color: rgb(128, 8, 124); 
+}
+
+#submit_div{
+    text-align: center;
+    margin-top: 10%;
+}
+
+.submit{
+    color: rgb(216, 12, 46);
+    padding: 10px;
+    font-weight: bold;
+}
+
+
+.menu{
+    color: rgb(117, 19, 35);
+    backface-visibility: hidden;
+    padding-bottom: 5%;
+}
+
+li {
+    display: inline-block; 
+    margin-right: 10%;
+}
+
+.flower_img{
+    margin-right: 20%; 
+    margin-top: 10%;
+    height: 150px;
+    width: 150px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+#flowerShop{
+    border-radius: 5px;
+    height: 200px;
+    width: 300px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.animation_icon{
+    width: 20px;
+    height: 20px;
+    animation: jump .5s linear alternate 10;
+    vertical-align: middle;
+    margin-inline: 10px;
+    text-align: center;
+}
+
+
+@keyframes jump{
+    0%   {transform: translate3d(0,0,0) scale3d(1,1,1);}
+    40%  {transform: translate3d(0,30%,0) scale3d(.7,1.5,1);}
+    100% {transform: translate3d(0,100%,0) scale3d(1.5,.7,1);}
+}
+
+
+.ourBouquets, .ourFlowers{
+    font-size: xx-large;
+}
+
+  
+.flower_img:hover {opacity: 0.7;}
+#flowerShop:hover {opacity: 0.7;}
+  
+  
+  .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(232, 202, 207); 
+    background-color: rgba(232, 202, 207,0.3);
+  }
+  
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1000px;
+  }
+  
+  #caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: rgb(163, 38, 134);
+    padding: 10px 0;
+    height: 150px;
+  }
+  
+  .modal-content, #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+  
+  @keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+  }
+  
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color:rgb(163, 38, 134);
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+
+  #inst_fb {
+      background-color: rgb(234, 222, 237);
+      background-color: rgba(232, 217, 237, 0.9);
+      color: rgb(163, 38, 134);
+      padding: 30px;
+      width: 20%;
+      height: 20%;
+      text-align: center;
+      margin-top: 7%;
+      margin-left: 40%;
+      float: left;
+      font-size: larger;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+#searchForm, #registrationForm{
+    padding: 2%;
+    margin: 27%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: rgb(128, 8, 124);
+    border-radius: 10px;
+}
+
+.ass3_inputs{
+    padding: 10px;
+    margin: 5px;
+}
+
+#user_login{
+    display: inline;
+    float: right;
+    margin-top: -3px;
+    margin-right: 10px;
+}
+
+#ass3_1{
+    color: rgb(128, 8, 124);
+    text-align: center;
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-top: 2%;
+}
+
+#ass3_1_bouquets{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+#container_ass3_1{
+    padding: 3%;
+}
+
+#footer_ass3_1{
+    margin-bottom: 5%;
+}
