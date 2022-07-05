@@ -1,5 +1,5 @@
 body {
-    background: url(../img/background.jpg) no-repeat;
+    background: url(../img/background1.jpg) no-repeat;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     backdrop-filter: blur(10px);
     background-size: 100% 100%;
@@ -23,6 +23,14 @@ body {
 .container{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: rgba(232, 217, 237, 0.3);
+    color: rgb(128, 8, 124);
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+
 }
 
 #main_HomePage {
@@ -357,4 +365,9 @@ li {
 
 #footer_ass3_1{
     margin-bottom: 5%;
+}
+
+.message{
+    text-align: center;
+    color: deeppink;
 }

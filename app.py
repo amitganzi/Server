@@ -94,6 +94,9 @@ def session_func():
     # print(session['CHECK'])
     return jsonify(dict(session))
 
+##assignment_4
+from HW4.assignment4_new.assignment_4 import assignment_4
+app.register_blueprint(assignment_4)
 
 if __name__ == '__main__':
     app.run(debug=True)

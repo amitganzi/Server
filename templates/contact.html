@@ -8,7 +8,6 @@
     <script  defer src="{{ url_for('static', filename = 'js/contact_js.js') }}"></script>
     <title>Bloom- Contact us</title>
 </head>
-
 <body>
 {% include('nav.html') %}
 
@@ -29,12 +28,12 @@
         <input type="text" id="FirstName" name="FirstName" autocomplete="on" pattern="[A-Za-z]{1,32}" required><br>
 
 
-        <label for="LastName" id="LastName" style="margin-right: 1%">
+        <label for="LastName" id="LastName">
             Last Name</label>
         <input type="text" id="LastName" name="LastName" autocomplete="on" pattern="[A-Za-z]{1,32}" required><br>
 
 
-        <label for="email" id="email" style="margin-right: 12%">
+        <label for="email" id="email">
             E-mail </label>
         <input type="email" id="email" name="email" autocomplete="on" pattern="[^ @]*@[^ @]*.com" required><br><br>
 

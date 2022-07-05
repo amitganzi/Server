@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %}Bloom - Forms{% endblock %}
+
+{% block content %}
+    {% include('header.html') %}
+    {% if message1 %}
+        <h3 class="message">{{ message1 }}</h3>
+    {% elif message2 %}
+        <h3 class="message">{{ message2 }} {{ user }} !</h3>
+    {% elif message3 %}
+        <h3 class="message">{{ message3 }} {{ user }}</h3>
+    {% else %}
+        <h3 class="message">{{ message4 }} </h3>
+    {% endif %}
+
+    <div class="container">
+    <form action="/insert_user" method="POST">
+        <h2>Insertion Form</h2>
+        <p>New here? Sign Up now and enjoy our special events!</p>
+
+        <input type="email" name="email" placeholder="abc@def.com"  pattern="[^ @]*@[^ @]*.com" class="ass3_inputs" required><br>
+        <input type="text" name="name" placeholder="Name" class="ass3_inputs" required><br>
+        <input type="password" name="password" placeholder="password" pattern="[0-9]{4}" class="ass3_inputs" required> <br>
+        <p>*password must contain 4 numbers</p> <br>
+        <input type="submit" class="submit">
+
+
+    </form>
+    </div>
+
+    <div class="container">
+        <form action="/update_user" method="POST">
+            <h2>Update Form</h2>
+            <p>Want to update your details? <br>
+                Insert your email for confirmation </p>
+            <input type="email" name="email" placeholder="abc@def.com"  pattern="[^ @]*@[^ @]*.com" class="ass3_inputs" required><br>
+
+            <p>Please fill in the fields you would like to update:</p>
+            <input type="text" name="name" placeholder="Name" class="ass3_inputs"><br>
+            <input type="password" name="password" placeholder="password" pattern="[0-9]{4}" class="ass3_inputs"> <br>
+            <p>*password must contain 4 numbers</p> <br>
+            <input type="submit" class="submit">
+        </form>
+    </div>
+
+    <div class="container">
+        <form action="/delete_user" method="POST">
+            <h2>Deletion Form</h2>
+            <p>Want to delete your details? <br>
+                Insert your email:</p>
+            <input type="email" name="email" placeholder="abc@def.com"  pattern="[^ @]*@[^ @]*.com" class="ass3_inputs" required><br>
+            <input type="password" name="password" placeholder="password" pattern="[0-9]{4}" class="ass3_inputs"> <br>
+            <p>*password must contain 4 numbers</p> <br>
+            <input type="submit" class="submit">
+        </form>
+    </div>
+
+    <div class="container">
+    <h2>Users List</h2>
+    <ol>
+        {% for user in users %}
+            <li><p><b>Email:</b> {{ user.email }}, <b>Name:</b> {{ user.name }}, <b>Password:</b> {{ user.password }}</p></li><br>
+        {% endfor %}
+    </ol>
+    </div>
+
+{% endblock %}

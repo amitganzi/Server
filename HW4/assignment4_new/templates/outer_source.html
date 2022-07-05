@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% include('assignment4_js_url.html') %}
+{#<script defer src="{{url_for('static', filename = 'js/assignment4_js.js') }}"></script>#}
+
+{% block title %}Bloom - Forms{% endblock %}
+
+{% block content %}
+    {% include('header.html') %}
+
+
+    <div class="container">
+    <form action="/outer_source" id="frontend">
+
+        <h2>Frontend Form</h2>
+        <p>Pick a user to extract:</p>
+        <input type="number" name="userID" id="userID" placeholder="user ID" class="ass3_inputs" required><br>
+        <button type="button" onclick="getUser()" class="submit">Submit</button>
+
+        <div id="response"></div>
+    </form>
+    </div>
+
+
+     <div class="container">
+    <form action="/outer_source/backend" id="frontend" method="get">
+
+        <h2>Backend Form</h2>
+        <p>Pick a user to extract:</p>
+        <input type="number" name="userID" id="userID" placeholder="user ID" class="ass3_inputs" required><br>
+        <input type="submit" class="submit">
+    </form>
+     {% if request_data %}
+        <h3> {{ request_data.first_name }} {{ request_data.last_name }} </h3>
+        <h4> {{ request_data.email }} </h4>
+        <img src="{{ request_data.avatar }}" alt="Profile Picture"/>
+    {% endif %}
+    </div>
+
+
+
+{% endblock %}
