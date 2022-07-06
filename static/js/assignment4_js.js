@@ -1,6 +1,4 @@
 
-console.log('hellllooooo')
-
 function getUser() {
      const input = document.getElementById("frontend").userID.value;
      fetch(` https://reqres.in/api/users/${input}`)
