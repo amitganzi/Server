@@ -112,31 +112,32 @@ def outer_source_backend():
     return render_template('outer_source.html', request_data=res.json()['data'])
 
 
-@assignment_4.route('/assignment4/restapi_users/', defaults={'user_id': -1})
+@assignment_4.route('/assignment4/restapi_users/', defaults={'user_id': "-1"})
 @assignment_4.route('/assignment4/restapi_users/<user_id>')
 def get_user(user_id):
-    if user_id == -1:
+    if user_id == "-1":
         query = f'SELECT * FROM users'
         users_list = interact_db(query, query_type='fetch')
         picked_user = random.choice(users_list)
         return jsonify(picked_user)
-
-    else:
-        query = f'SELECT * FROM users WHERE id={user_id}'
-        users_list = interact_db(query, query_type='fetch')
-        if len(users_list) == 0:
-            return_dict = {
-                'message': 'user was not found, try again.'
-            }
-        else:
-            user = users_list[0]
-            return_dict = {
-                'name': user.name,
-                'email': user.email
-            }
+    elif user_id.isnumeric():
+            query = f'SELECT * FROM users WHERE id={user_id}'
+            users_list = interact_db(query, query_type='fetch')
+            if len(users_list) == 0:
+                return_dict = {
+                    'message': 'user was not found, try again.'
+                }
+            else:
+                user = users_list[0]
+                return_dict = {
+                    'name': user.name,
+                    'email': user.email
+                }
+            return jsonify(return_dict)
+    return_dict = {
+        'message': 'Invalid input. Please enter an integer.'
+    }
     return jsonify(return_dict)
-
-
 
 
 def interact_db(query, query_type: str):
