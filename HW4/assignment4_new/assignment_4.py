@@ -2,6 +2,7 @@ import requests
 from flask import Blueprint, render_template, redirect, url_for, jsonify
 from flask import request
 import mysql.connector
+import random
 
 assignment_4 = Blueprint('assignment_4', __name__,
                          static_folder='static',
@@ -99,12 +100,12 @@ def users_response():
 
 
 
-@assignment_4.route('/outer_source')
+@assignment_4.route('/assignment4/outer_source')
 def outer_source_frontend():
     return render_template('outer_source.html')
 
 
-@assignment_4.route('/outer_source/backend')
+@assignment_4.route('/assignment4/outer_source/backend')
 def outer_source_backend():
     userID = request.args['userID']
     res = requests.get(f"https://reqres.in/api/users/{userID}")
@@ -117,14 +118,8 @@ def get_user(user_id):
     if user_id == -1:
         query = f'SELECT * FROM users'
         users_list = interact_db(query, query_type='fetch')
-        return_list = []
-        for user in users_list:
-            user_dict = {
-                'name': user.name,
-                'email': user.email
-            }
-            return_list.append(user_dict)
-        return jsonify(return_list)
+        picked_user = random.choice(users_list)
+        return jsonify(picked_user)
 
     else:
         query = f'SELECT * FROM users WHERE id={user_id}'
